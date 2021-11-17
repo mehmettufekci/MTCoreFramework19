@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MTFramework.DataAccess\MTFramework.DataAccess.csproj" />
+    <ProjectReference Include="..\MTFramework.Entities\MTFramework.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
