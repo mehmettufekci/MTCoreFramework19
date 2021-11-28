@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using MTFramework.Business.Abstract;
 using MTFramework.Business.Concrete;
+using MTFramework.Core.Utilities.Security.Jwt;
 using MTFramework.DataAccess.Abstract;
 using MTFramework.DataAccess.Concrete.EntityFramework;
 using System;
@@ -20,7 +21,10 @@ namespace MTFramework.Business.DependencyResolvers.Autofac
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>();
 
             builder.RegisterType<UserManager>().As<IUserService>();
-            builder.RegisterType<EfUserDal>().As<IUserService>();
+            builder.RegisterType<EfUserDal>().As<IUserDal>();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MTFramework.Business.Abstract;
 using MTFramework.Entities.Concrete;
@@ -21,6 +22,7 @@ namespace MTFramework.WebAPI.Controllers
         }
 
         [HttpGet(template:"getall")]
+        [Authorize(Roles ="Product.List")]
         public IActionResult GetList()
         {
             var result = _productService.GetList();
